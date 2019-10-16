@@ -331,6 +331,7 @@ static esp_err_t upload_post_handler(httpd_req_t *req)
 	/* Content length of the request gives
 	 * the size of the file being uploaded */
 	int remaining = req->content_len;
+	int file_len = remaining;
 
 	while (remaining > 0)
 	{
@@ -436,6 +437,8 @@ static esp_err_t upload_post_handler(httpd_req_t *req)
 		 * the file left to be uploaded */
 		remaining -= data_read;
 		binary_file_length += data_read;
+
+		printf("%d%%\n",(int)(((double)binary_file_length / file_len)*100));
 	}
 
 	ESP_LOGI(TAG, "Total Write binary data length : %d", binary_file_length);
@@ -454,10 +457,6 @@ static esp_err_t upload_post_handler(httpd_req_t *req)
 	ESP_LOGI(TAG, "Prepare to restart system!");
 	esp_restart();
 
-	/* Redirect onto root to see the updated file list */
-	httpd_resp_set_status(req, "303 See Other");
-	httpd_resp_set_hdr(req, "Location", "/");
-	httpd_resp_sendstr(req, "File uploaded successfully");
 	return ESP_OK;
 }
 
