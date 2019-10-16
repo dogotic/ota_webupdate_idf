@@ -3,7 +3,7 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := file_server
+PROJECT_NAME := ota_web_updater
 
 EXTRA_COMPONENT_DIRS = $(IDF_PATH)/examples/common_components/protocol_examples_common
 

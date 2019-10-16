@@ -3,9 +3,9 @@
     	
     <storageModule moduleId="org.eclipse.cdt.core.settings">
         		
-        <cconfiguration id="cdt.managedbuild.toolchain.gnu.cross.base.1960796868">
+        <cconfiguration id="cdt.managedbuild.toolchain.gnu.cross.base.624201620">
             			
-            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.cross.base.1960796868" moduleId="org.eclipse.cdt.core.settings" name="Default">
+            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.cross.base.624201620" moduleId="org.eclipse.cdt.core.settings" name="Default">
                 				
                 <externalSettings/>
                 				
@@ -29,121 +29,37 @@
             			
             <storageModule moduleId="cdtBuildSystem" version="4.0.0">
                 				
-                <configuration buildProperties="" description="" id="cdt.managedbuild.toolchain.gnu.cross.base.1960796868" name="Default" optionalBuildProperties="" parent="org.eclipse.cdt.build.core.emptycfg">
+                <configuration buildProperties="" id="cdt.managedbuild.toolchain.gnu.cross.base.624201620" name="Default" optionalBuildProperties="" parent="org.eclipse.cdt.build.core.emptycfg">
                     					
-                    <folderInfo id="cdt.managedbuild.toolchain.gnu.cross.base.1960796868.1878643702" name="/" resourcePath="">
+                    <folderInfo id="cdt.managedbuild.toolchain.gnu.cross.base.624201620.1869756380" name="/" resourcePath="">
                         						
-                        <toolChain id="cdt.managedbuild.toolchain.gnu.cross.base.223618785" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.base">
+                        <toolChain id="cdt.managedbuild.toolchain.gnu.cross.base.299261896" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.base">
                             							
-                            <option id="cdt.managedbuild.option.gnu.cross.prefix.49152802" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix"/>
+                            <option id="cdt.managedbuild.option.gnu.cross.prefix.260349681" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix"/>
                             							
-                            <option id="cdt.managedbuild.option.gnu.cross.path.485722941" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path"/>
+                            <option id="cdt.managedbuild.option.gnu.cross.path.590487270" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path"/>
                             							
-                            <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1870588701" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+                            <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1795810606" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
                             							
-                            <builder id="cdt.managedbuild.builder.gnu.cross.1983220236" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross">
+                            <builder id="cdt.managedbuild.builder.gnu.cross.1468465449" managedBuildOn="false" name="Gnu Make Builder.Default" superClass="cdt.managedbuild.builder.gnu.cross"/>
+                            							
+                            <tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.2040142225" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
                                 								
-                                <outputEntries>
-                                    									
-                                    <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name=""/>
-                                    								
-                                </outputEntries>
-                                							
-                            </builder>
-                            							
-                            <tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1207794720" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
-                                								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.1165591675" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/esp_wifi/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/esp_event/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/log/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/spiffs/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/nvs_flash/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/tcpip_adapter/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/esp_common/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/examples/common_components/protocol_examples_common/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/vfs/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/esp_http_server/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/ESP32_OTA_IDF/build/include}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/nghttp/port/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/app_update/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/bootloader_support/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/spi_flash/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/driver/include/"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/freertos/include"/>
-                                    								
-                                </option>
-                                								
-                                <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1393165276" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+                                <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1134452087" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
                                 							
                             </tool>
                             							
-                            <tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.238536381" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+                            <tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.590246831" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.307888324" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/esp_wifi/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/esp_event/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/log/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/spiffs/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/nvs_flash/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/tcpip_adapter/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/esp_common/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/examples/common_components/protocol_examples_common/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/vfs/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/esp_http_server/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/ESP32_OTA_IDF/build/include}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/nghttp/port/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/app_update/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/bootloader_support/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/spi_flash/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/driver/include/driver"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/freertos/include"/>
-                                    								
-                                </option>
-                                								
-                                <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1157203125" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                                <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1629907047" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
                                 							
                             </tool>
                             							
-                            <tool id="cdt.managedbuild.tool.gnu.cross.c.linker.123211268" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
+                            <tool id="cdt.managedbuild.tool.gnu.cross.c.linker.446306449" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
                             							
-                            <tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.620427378" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
+                            <tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1001303150" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
                                 								
-                                <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.237811507" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+                                <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1132480505" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
                                     									
                                     <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
                                     									
@@ -153,49 +69,11 @@
                                 							
                             </tool>
                             							
-                            <tool id="cdt.managedbuild.tool.gnu.cross.archiver.1051856293" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+                            <tool id="cdt.managedbuild.tool.gnu.cross.archiver.735930766" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
                             							
-                            <tool id="cdt.managedbuild.tool.gnu.cross.assembler.1155171190" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+                            <tool id="cdt.managedbuild.tool.gnu.cross.assembler.1766964230" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.both.asm.option.include.paths.1202529126" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/esp_wifi/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/esp_event/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/log/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/spiffs/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/nvs_flash/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/tcpip_adapter/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/esp_common/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/examples/common_components/protocol_examples_common/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/vfs/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/esp_http_server/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/ESP32_OTA_IDF/build/include}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/nghttp/port/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/app_update/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/bootloader_support/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/spi_flash/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/driver/include/driver"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/kaktus/esp/esp-idf/components/freertos/include"/>
-                                    								
-                                </option>
-                                								
-                                <inputType id="cdt.managedbuild.tool.gnu.assembler.input.550154987" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+                                <inputType id="cdt.managedbuild.tool.gnu.assembler.input.800708195" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
                                 							
                             </tool>
                             						
@@ -212,14 +90,6 @@
         </cconfiguration>
         	
     </storageModule>
-    	
-    <storageModule moduleId="cdtBuildSystem" version="4.0.0">
-        		
-        <project id="ESP32_OTA_IDF.null.669662646" name="ESP32_OTA_IDF"/>
-        	
-    </storageModule>
-    	
-    <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
     	
     <storageModule moduleId="scannerConfiguration">
         		
@@ -239,8 +109,16 @@
         	
     </storageModule>
     	
-    <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+    <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+        		
+        <project id="OTA_WebUpdater.null.234507789" name="OTA_WebUpdater"/>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
     	
     <storageModule moduleId="refreshScope"/>
+    	
+    <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
     
 </cproject>

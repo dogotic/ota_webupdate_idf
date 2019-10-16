@@ -1,67 +1,88 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-	<body>
-		<script>
-			function upload() 
+<script>
+	function upload() 
+	{
+		var fileInput = document.getElementById("FirmwareFile").files;
+		    
+		/* Max size of an individual file. Make sure this
+		 * value is same as that set in file_server.c */
+		var MAX_FILE_SIZE = 1024*1024;
+		var MAX_FILE_SIZE_STR = "1 MB";
+
+
+		if (fileInput.length == 0) 
+		{
+			alert("No file selected!");
+		}
+		else if (fileInput[0].size > 1024*1024) 
+		{
+			alert("File size must be less than 1 MB");				
+		}
+		else
+		{
+			document.getElementById("FirmwareFile").disabled = true;
+			document.getElementById("upload").disabled = true;
+
+			var file = fileInput[0];
+			var xhttp = new XMLHttpRequest();
+			
+			xhttp.onreadystatechange = function() 
 			{
-				var fileInput = document.getElementById("FirmwareFile").files;
-				    
-				/* Max size of an individual file. Make sure this
-				 * value is same as that set in file_server.c */
-				var MAX_FILE_SIZE = 1024*1024;
-				var MAX_FILE_SIZE_STR = "1 MB";
-
-
-				if (fileInput.length == 0) 
+			        	if (xhttp.readyState == 4) 
 				{
-					alert("No file selected!");
-				}
-				else if (fileInput[0].size > 1024*1024) 
-				{
-        				alert("File size must be less than 1 MB");				
-				}
-				else
-				{
-        				document.getElementById("FirmwareFile").disabled = true;
-					document.getElementById("upload").disabled = true;
-
-				        var file = fileInput[0];
-				        var xhttp = new XMLHttpRequest();
-
-				        xhttp.onreadystatechange = function() 
+							if (xhttp.status == 200) 
 					{
-				            	if (xhttp.readyState == 4) 
-						{
-                					if (xhttp.status == 200) 
-							{
-                    						document.open();
-	                    					document.write(xhttp.responseText);
-        	            					document.close();
-                					} 
-							else if (xhttp.status == 0) 
-							{
-					                    alert("Server closed the connection abruptly!");
-					                    location.reload()
-					                } 
-							else 
-							{
-					                    alert(xhttp.status + " Error!\n" + xhttp.responseText);
-					                    location.reload()
-					                }
-            					}
-        				};
-
-					var upload_path = "/upload/" + fileInput[0].name;
-
-        				xhttp.open("POST", upload_path, true);
-				        xhttp.send(file);
-				}
-			}
+									document.open();
+			    					document.write(xhttp.responseText);
+			    					document.close();
+							} 
+					else if (xhttp.status == 0) 
+					{
+			                    alert("Server closed the connection abruptly!");
+			                    location.reload()
+			                } 
+					else 
+					{
+			                    alert(xhttp.status + " Error!\n" + xhttp.responseText);
+			                    location.reload()
+			                }
+						}
+				};
+			
+			var upload_path = "/upload/" + fileInput[0].name;
+			
+			xhttp.open("POST", upload_path, true);
+			xhttp.send(file);
+		}
+	}
 		</script>
 
-		<p>Upload a file</p>
-		<input id="FirmwareFile" type="file" style="width:100%;">
-		<br><br>
-		<button id="upload" type="button" onclick="upload()">Upload</button>
-	</body>
+
+<div class="jumbotron">
+  <h1><center>FIRMWARE UPLOAD</center></h1>
+</div>
+
+<div class="container">
+  <input id="FirmwareFile" type="file"> </input>
+</div>
+
+<br><br>
+
+<div class="container">
+  <button id="upload" type="button" class="btn btn-primary btn-block" onclick="upload()">UPLOAD</button>
+</div>
+
+</body>
 </html>
