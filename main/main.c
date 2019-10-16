@@ -18,16 +18,8 @@
 #include "tcpip_adapter.h"
 #include "protocol_examples_common.h"
 
-/* This example demonstrates how to create file server
- * using esp_http_server. This file has only startup code.
- * Look in file_server.c for the implementation */
-
-static const char *TAG="example";
-
-/* Declare the function which starts the file server.
- * Implementation of this function is to be found in
- * file_server.c */
-esp_err_t start_file_server(const char *base_path);
+#include "fw_update.h"
+#include "blink.h"
 
 void app_main(void)
 {
@@ -39,11 +31,8 @@ void app_main(void)
      * Read "Establishing Wi-Fi or Ethernet Connection" section in
      * examples/protocols/README.md for more information about this function.
      */
+	xTaskCreate(FW_UPDATE_Task,"firmware_update_task",2048,NULL,2,NULL);
+	xTaskCreate(BLINK_Task,"blink_task",2048,NULL,3,NULL);
+
     ESP_ERROR_CHECK(example_connect());
-
-    /* Initialize file storage */
-    //ESP_ERROR_CHECK(init_spiffs());
-
-    /* Start the file server */
-    ESP_ERROR_CHECK(start_file_server("/spiffs"));
 }
