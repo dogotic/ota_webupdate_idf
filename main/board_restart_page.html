@@ -14,9 +14,11 @@
 <script>
 	function restart() 
 	{
-			var restart_path = "/restart/";
-			
-			xhttp.open("POST", restart_path, true);
+			console.log("RESTART BUTTON CLICKED");
+
+				var xhttp = new XMLHttpRequest();
+				xhttp.open("POST", "run_reset", true);
+				xhttp.send();
 	}
 </script>
 
