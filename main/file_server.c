@@ -90,6 +90,22 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
 	return ESP_OK;
 }
 
+static esp_err_t http_board_restart_page(httpd_req_t *req)
+{
+	/* Get handle to embedded file upload script */
+	extern const unsigned char board_restart_page_start[] asm("_binary_board_restart_page_html_start");
+	extern const unsigned char board_restart_page_end[] asm("_binary_board_restart_page_html_end");
+	const size_t board_restart_page_size = (board_restart_page_end - board_restart_page_start);
+
+	/* Add file upload form and script which on execution sends a POST request to /upload */
+	httpd_resp_send_chunk(req, (const char*) board_restart_page_start,
+			board_restart_page_size);
+
+	/* Send empty chunk to signal HTTP response completion */
+	httpd_resp_sendstr_chunk(req, NULL);
+	return ESP_OK;
+}
+
 #define IS_FILE_EXT(filename, ext) \
     (strcasecmp(&filename[strlen(filename) - sizeof(ext) + 1], ext) == 0)
 
@@ -239,6 +255,12 @@ static esp_err_t download_get_handler(httpd_req_t *req)
 	/* Respond with an empty chunk to signal HTTP response completion */
 	httpd_resp_send_chunk(req, NULL, 0);
 	return ESP_OK;
+}
+
+static esp_err_t board_restart_handler(httpd_req_t *req)
+{
+	ESP_LOGI(TAG, "Prepare to restart system!");
+	esp_restart();
 }
 
 /* Handler to upload a file onto the server */
@@ -454,8 +476,8 @@ static esp_err_t upload_post_handler(httpd_req_t *req)
 		ESP_LOGE(TAG, "esp_ota_set_boot_partition failed (%s)!",
 				esp_err_to_name(err));
 	}
-	ESP_LOGI(TAG, "Prepare to restart system!");
-	esp_restart();
+	
+	http_board_restart_page(req);
 
 	return ESP_OK;
 }
@@ -513,11 +535,22 @@ esp_err_t start_file_server(const char *base_path)
 
 	/* URI handler for uploading files to server */
 	httpd_uri_t file_upload =
-	{ .uri = "/upload/*",   // Match all URIs of type /upload/path/to/file
-			.method = HTTP_POST, .handler = upload_post_handler, .user_ctx =
-					server_data    // Pass server data as context
-			};
+	{ 
+		.uri      = "/upload/*",   // Match all URIs of type /upload/path/to/file
+		.method   = HTTP_POST, 
+		.handler  = upload_post_handler, 
+		.user_ctx = server_data    // Pass server data as context
+	};
 	httpd_register_uri_handler(server, &file_upload);
 
+	/* URI handler for restarting the board */
+	httpd_uri_t board_restart =
+	{ 
+		.uri = "/restart/*",   // Match all URIs of type /upload/path/to/file
+		.method   = HTTP_POST, 
+		.handler  = board_restart_handler, 
+		.user_ctx = server_data    // Pass server data as context
+	};
+	httpd_register_uri_handler(server, &board_restart);
 	return ESP_OK;
 }

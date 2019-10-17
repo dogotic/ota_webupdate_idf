@@ -31,9 +31,9 @@ void BLINK_Task(void *arg)
 	{
 		/* Blink off (output low) */
 		gpio_set_level(BLINK_GPIO, 0);
-		vTaskDelay(250 / portTICK_PERIOD_MS);
+		vTaskDelay(150 / portTICK_PERIOD_MS);
 		/* Blink on (output high) */
 		gpio_set_level(BLINK_GPIO, 1);
-		vTaskDelay(250 / portTICK_PERIOD_MS);
+		vTaskDelay(150 / portTICK_PERIOD_MS);
 	}
 }
