@@ -546,7 +546,7 @@ esp_err_t start_file_server(const char *base_path)
 	/* URI handler for restarting the board */
 	httpd_uri_t board_restart =
 	{ 
-		.uri = "/restart/*",   // Match all URIs of type /upload/path/to/file
+		.uri = "/restart/",   // Match all URIs of type /upload/path/to/file
 		.method   = HTTP_POST, 
 		.handler  = board_restart_handler, 
 		.user_ctx = server_data    // Pass server data as context
